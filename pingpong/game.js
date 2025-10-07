@@ -23,7 +23,7 @@ const GAME_STATE = {
         direction: 0,
         speedBase: 1.5,
         speedCurrent: 0,
-        speedMax: 3.8,
+        speedMax: 5.0,
         acceleration: 1.06,
         score: 0
     },
