@@ -76,6 +76,7 @@ code {
     justify-content: space-between;
     gap: 1.5rem;
     padding: 1.2rem 1.8rem;
+    background-color: #0000005b;
 }
 
 /* Logo du site positionné dans la nav */
@@ -98,7 +99,7 @@ code {
 /* Style de chaque lien du menu */
 .nav-links a {
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 0, 0, 0.9);
     padding-bottom: 0.25rem;
     border-bottom: 2px solid transparent;
     transition: border 0.2s ease, opacity 0.2s ease;
@@ -107,7 +108,7 @@ code {
 /* Mise en évidence de la page active et du survol */
 .nav-links a:hover,
 .nav-links .active {
-    border-color: var(--accent);
+    border-color: #fff;
     opacity: 1;
 }
 
