@@ -1,14 +1,14 @@
 /* Variables CSS servant de design tokens pour l'ensemble du site */
 :root {
-    --accent: #c67256;
-    --accent-dark: #e46a41;
-    --ink-900: #1f2a3d;
-    --ink-700: #596074;
-    --ink-400: #9aa3b8;
-    --surface: #ffffff;
+    --accent: #000000;
+    --accent-dark: #FF9CAE;
+    --ink-900: #c7c7c7;
+    --ink-700: #3a5ec0;
+    --ink-400: #bffffc;
+    --surface: #c6ff76d6;
     --surface-soft: #eef2fb;
     --background: #f5f7fc;
-    --border: rgba(31, 42, 61, 0.09);
+    --border: rgb(226, 23, 223);
     --shadow-soft: 0 18px 45px rgba(31, 42, 61, 0.08);
     --shadow-light: 0 10px 30px rgba(31, 42, 61, 0.05);
     --radius-xl: 28px;
@@ -47,7 +47,7 @@ a:hover {
 /* Apparence des commandes et blocs monospace */
 code {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    background: rgba(31, 42, 61, 0.07);
+    background: rgb(255, 255, 255);
     border-radius: 0.5rem;
     padding: 0.2rem 0.5rem;
     font-size: 0.95rem;
@@ -116,7 +116,7 @@ code {
     background: linear-gradient(140deg, #2f3c57 0%, #1f2c45 55%, #182133 100%);
     border-bottom-left-radius: var(--radius-xl);
     border-bottom-right-radius: var(--radius-xl);
-    color: #ffffff;
+    color: #ffd500;
     overflow: hidden;
     padding-bottom: 4.6rem;
     box-shadow: inset 0 -90px 120px rgba(0, 0, 0, 0.18);
@@ -126,7 +126,7 @@ code {
 .hero-content {
     max-width: 760px;
     margin: 0 auto;
-    text-align: center;
+    text-align: start;
     padding: 4.6rem 1.8rem 3.2rem;
 }
 
@@ -165,7 +165,7 @@ code {
 
 /* Bouton principal orange */
 .cta-button {
-    background: linear-gradient(130deg, var(--accent), #ff9c75);
+    background: linear-gradient(130deg, var(--accent), #8d280098);
     color: #ffffff;
     box-shadow: var(--shadow-light);
 }
@@ -636,7 +636,7 @@ details p em {
 /* État visible du toast */
 #konami-toast.show {
     transform: translateY(0);
-    opacity: 1;
+    opacity: 0.5;
 }
 
 /* Ajustements responsives pour tablettes */
