@@ -1,0 +1,692 @@
+/* Variables CSS servant de design tokens pour l'ensemble du site */
+:root {
+    --accent: #ff8258;
+    --accent-dark: #e46a41;
+    --ink-900: #1f2a3d;
+    --ink-700: #596074;
+    --ink-400: #9aa3b8;
+    --surface: #ffffff;
+    --surface-soft: #eef2fb;
+    --background: #f5f7fc;
+    --border: rgba(31, 42, 61, 0.09);
+    --shadow-soft: 0 18px 45px rgba(31, 42, 61, 0.08);
+    --shadow-light: 0 10px 30px rgba(31, 42, 61, 0.05);
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    --radius-md: 16px;
+    --radius-sm: 10px;
+}
+
+/* Normalisation de la gestion de tailles sur tous les éléments */
+* {
+    box-sizing: border-box;
+}
+
+/* Style global du body : typo, fond et lisibilité */
+body {
+    margin: 0;
+    font-family: "Manrope", "Segoe UI", Roboto, sans-serif;
+    background: radial-gradient(circle at 12% 0%, rgba(255, 146, 110, 0.15), transparent 45%),
+                var(--background);
+    color: var(--ink-900);
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+}
+
+/* Liens par défaut */
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* Effet au survol des liens */
+a:hover {
+    color: var(--accent-dark);
+}
+
+/* Apparence des commandes et blocs monospace */
+code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    background: rgba(31, 42, 61, 0.07);
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.95rem;
+    color: var(--ink-900);
+}
+
+/* Étiquettes arrondies utilisées dans les bandeaux */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* Barre de navigation supérieure */
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.2rem 1.8rem;
+}
+
+/* Logo du site positionné dans la nav */
+.logo {
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+}
+
+/* Liste des liens principaux */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.4rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style de chaque lien du menu */
+.nav-links a {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+    transition: border 0.2s ease, opacity 0.2s ease;
+}
+
+/* Mise en évidence de la page active et du survol */
+.nav-links a:hover,
+.nav-links .active {
+    border-color: var(--accent);
+    opacity: 1;
+}
+
+/* En-tête principal avec dégradé et arrondis */
+.hero {
+    background: linear-gradient(140deg, #2f3c57 0%, #1f2c45 55%, #182133 100%);
+    border-bottom-left-radius: var(--radius-xl);
+    border-bottom-right-radius: var(--radius-xl);
+    color: #ffffff;
+    overflow: hidden;
+    padding-bottom: 4.6rem;
+    box-shadow: inset 0 -90px 120px rgba(0, 0, 0, 0.18);
+}
+
+/* Bloc central du message d'accueil */
+.hero-content {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4.6rem 1.8rem 3.2rem;
+}
+
+/* Titrage principal adaptable */
+.hero-content h1 {
+    font-size: clamp(2.4rem, 2.8vw + 1.7rem, 3.6rem);
+    margin: 1rem 0 1.1rem;
+}
+
+/* Paragraphe introductif */
+.hero-content p {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.15rem;
+    margin-bottom: 2.4rem;
+}
+
+/* Boutons d'appel à l'action */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Styles partagés des deux boutons principaux */
+.cta-button,
+.ghost-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    padding: 0.9rem 1.8rem;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+/* Bouton principal orange */
+.cta-button {
+    background: linear-gradient(130deg, var(--accent), #ff9c75);
+    color: #ffffff;
+    box-shadow: var(--shadow-light);
+}
+
+/* Animation légère au survol du CTA */
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 32px rgba(255, 130, 88, 0.3);
+}
+
+/* Variante bleue dédiée au mini-jeu */
+.hero-actions .game-button {
+    background: linear-gradient(130deg, #38bdf8, #0ea5e9);
+    color: #0f172a;
+    box-shadow: 0 18px 32px rgba(14, 165, 233, 0.28);
+}
+
+.hero-actions .game-button:hover {
+    box-shadow: 0 18px 32px rgba(14, 165, 233, 0.42);
+}
+
+/* Variante translucide pour l'exploration */
+.ghost-button {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    color: #ffffff;
+    background: transparent;
+}
+
+/* Accentuation du ghost button au survol */
+.ghost-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Vignettes introductives sous le héros */
+.hero-panels {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 1.8rem 3.4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.6rem;
+}
+
+/* Cartes translucides de la section héro */
+.hero-panels article {
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: var(--radius-lg);
+    padding: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 22px 36px rgba(10, 16, 28, 0.32);
+}
+
+/* Gabarit centré pour le contenu principal */
+.content {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 2.6rem 1.8rem 4.2rem;
+}
+
+/* Espacement vertical entre les sections */
+.section {
+    margin-top: 4.4rem;
+}
+
+/* Entêtes communs des sections */
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 2.6rem;
+    text-align: center;
+}
+
+/* Réglages typographiques des titres de section */
+.section-heading h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Paragraphe introductif des sections */
+.section-heading p {
+    margin: 0;
+    color: var(--ink-700);
+}
+
+/* Gabarits de grilles réutilisés dans plusieurs sections */
+.overview-grid,
+.concept-grid,
+.resource-grid,
+.practice-grid,
+.faq-grid,
+.intro-grid,
+.command-list,
+.memo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.8rem;
+}
+
+/* Cartes blanches avec ombre légère */
+.overview-grid article,
+.resource-grid article,
+.practice-card,
+.memo-card {
+    background: var(--surface);
+    padding: 1.8rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Effet d'élévation lorsqu'on survole une carte */
+.overview-grid article:hover,
+.resource-grid article:hover,
+.practice-card:hover,
+.memo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Variante spécifique pour afficher les concepts sous forme de cartes extensibles */
+.concept-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+    justify-content: center;
+}
+
+/* Cartes repliables des concepts */
+.concept-grid details {
+    position: relative;
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: 1.4rem 1.6rem;
+    box-shadow: var(--shadow-light);
+    width: 260px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    overflow: visible;
+}
+
+/* Mise en avant lors du survol d'une carte */
+.concept-grid details:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(31, 42, 61, 0.1);
+}
+
+/* En-tête cliquable des cartes */
+summary {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--ink-900);
+}
+
+/* Suppression du triangle natif pour garder un style custom */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Chevron custom indiquant l'ouverture */
+summary::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+/* Rotation du chevron quand la carte est ouverte */
+details[open] summary::after {
+    transform: rotate(-135deg);
+}
+
+/* Contenu détaillé affiché sous la carte ouverte */
+details p {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background: var(--surface);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    padding: 1rem 1.4rem;
+    margin-top: 0.6rem;
+    color: var(--ink-700);
+    animation: expand 0.25s ease;
+    z-index: 10;
+}
+
+/* Animation d'apparition des cartes */
+@keyframes expand {
+    from {
+        opacity: 0;
+        transform: translateY(-5px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Priorité z-index quand plusieurs cartes sont ouvertes */
+.concept-grid details[open] {
+    z-index: 5;
+}
+
+/* Emphase sur les mots clés à l'intérieur des cartes */
+details p em {
+    color: var(--accent-dark);
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* Encadré du workflow en 6 étapes */
+.workflow {
+    background: var(--surface);
+    border-radius: var(--radius-xl);
+    padding: 3rem 2.6rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Liste numérotée stylisée du workflow */
+.workflow-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: workflow;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.8rem;
+}
+
+/* Cartes individuelles de chaque étape */
+.workflow-steps li {
+    counter-increment: workflow;
+    padding: 2rem 1.6rem 1.6rem;
+    border-radius: var(--radius-lg);
+    background: var(--surface-soft);
+    border: 1px solid rgba(31, 42, 61, 0.06);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+
+/* Pastille numérotée positionnée au-dessus de la carte */
+.workflow-steps li::before {
+    content: counter(workflow);
+    position: absolute;
+    top: -24px;
+    left: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(130deg, var(--accent), #ff9c75);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 16px 28px rgba(255, 130, 88, 0.28);
+}
+
+/* Titres et paragraphes des étapes */
+.workflow-steps h3 {
+    margin-top: 0.8rem;
+    margin-bottom: 0.6rem;
+}
+
+/* Description textuelle de chaque étape */
+.workflow-steps p {
+    margin: 0;
+    color: var(--ink-700);
+}
+
+/* Cartes de bonnes pratiques (permet d'ajouter des éléments absolus) */
+.practice-card { position: relative; }
+
+/* Variante sombre pour la checklist de merge */
+.practice-card.accent {
+    background: linear-gradient(135deg, rgba(47, 60, 87, 0.96), rgba(28, 39, 60, 0.92));
+    color: #f5f7fc;
+    border: none;
+    box-shadow: 0 20px 36px rgba(18, 26, 44, 0.45);
+}
+
+/* Lignes de la checklist finale */
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.85rem;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.08);
+    margin-top: 0.6rem;
+    font-weight: 600;
+}
+
+/* Personnalisation des cases à cocher */
+.check-item input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+}
+
+/* Grille plus large pour les questions fréquentes */
+.faq-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* Ajustement d'espacement sous la section ressources */
+.resources {
+    margin-bottom: 2rem;
+}
+
+/* Héros spécifique à la page des commandes */
+.page-hero {
+    background: linear-gradient(140deg, #303d58, #1e2b44);
+    color: #ffffff;
+    border-bottom-left-radius: var(--radius-xl);
+    border-bottom-right-radius: var(--radius-xl);
+    padding-bottom: 3.6rem;
+    box-shadow: inset 0 -90px 110px rgba(0, 0, 0, 0.22);
+}
+
+/* Mise en page du titre et du sous-titre */
+.page-title {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4.2rem 1.8rem 2.8rem;
+}
+
+/* Taille fluide du titre de page */
+.page-title h1 {
+    font-size: clamp(2.2rem, 2.4vw + 1.6rem, 3.1rem);
+    margin: 1rem 0;
+}
+
+/* Texte descriptif sous le titre principal */
+.page-title p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Cartes introductives en haut de la fiche commandes */
+.command-intro .intro-grid article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+/* Commandes affichées sur une ligne */
+.command-intro code {
+    display: inline-block;
+}
+
+/* Bloc principal listant les situations */
+.command-catalog {
+    background: var(--surface);
+    border-radius: var(--radius-xl);
+    padding: 3rem 2.4rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Sections repliables du catalogue */
+.command-groups details {
+    background: var(--surface-soft);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(31, 42, 61, 0.07);
+    padding: 1.6rem 1.8rem;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Espacement entre chaque groupe repliable */
+.command-groups details + details {
+    margin-top: 1.6rem;
+}
+
+/* Léger soulèvement des groupes au survol */
+.command-groups details:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 32px rgba(31, 42, 61, 0.12);
+}
+
+/* Contenant des cartes de commandes */
+.command-list {
+    margin-top: 1.6rem;
+}
+
+/* Carte décrivant une commande Git */
+.command-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(31, 42, 61, 0.08);
+    padding: 1.6rem 1.4rem;
+    box-shadow: var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Titre de la commande */
+.command-card h3 {
+    margin: 0;
+}
+
+/* Description de la commande */
+.command-card p {
+    margin: 0;
+    color: var(--ink-700);
+}
+
+/* Variante contrastée pour mettre en avant un mémo */
+.memo-card.accent {
+    background: linear-gradient(130deg, rgba(47, 60, 87, 0.96), rgba(32, 44, 68, 0.9));
+    color: #f5f7fc;
+    border: none;
+    box-shadow: 0 20px 36px rgba(18, 26, 44, 0.45);
+}
+
+/* Listes affichées dans les mémos */
+.memo-card ul,
+.memo-card ol {
+    margin: 1rem 0 0;
+    padding-left: 1.2rem;
+    color: inherit;
+}
+
+/* Style global des pieds de page */
+.site-footer {
+    text-align: center;
+    padding: 2.5rem 1.8rem 3rem;
+    font-size: 0.95rem;
+    color: var(--ink-700);
+}
+
+/* Lien dans le pied de page */
+.site-footer a { color: var(--accent); }
+
+/* Toast qui s'affiche après la découverte de l'easter egg */
+#konami-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, rgba(47, 60, 87, 0.96), rgba(28, 39, 60, 0.92));
+    color: #f9fbff;
+    font-weight: 700;
+    padding: 1rem 1.4rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 24px 40px rgba(12, 18, 32, 0.35);
+    transform: translateY(140%);
+    opacity: 0;
+    transition: transform 0.32s ease, opacity 0.32s ease;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* État visible du toast */
+#konami-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Ajustements responsives pour tablettes */
+@media (max-width: 960px) {
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .hero,
+    .page-hero {
+        border-bottom-left-radius: 42px;
+        border-bottom-right-radius: 42px;
+    }
+
+    .workflow-steps {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+/* Ajustements responsives pour mobiles */
+@media (max-width: 640px) {
+    .hero-content {
+        padding-top: 3.6rem;
+    }
+
+    .hero-panels {
+        grid-template-columns: 1fr;
+    }
+
+    .overview-grid,
+    .concept-grid,
+    .resource-grid,
+    .practice-grid,
+    .faq-grid,
+    .intro-grid,
+    .command-list,
+    .memo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow {
+        padding: 2.4rem 1.6rem;
+    }
+
+    .workflow-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .command-catalog {
+        padding: 2.6rem 1.6rem;
+    }
+}

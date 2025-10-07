@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-jeu Ping Pong</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="game-topbar">
+        <nav class="top-nav">
+            <a class="logo" href="../index.html">Atelier Git</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#intro">Découvrir</a></li>
+                <li><a href="../index.html#concepts">Concepts</a></li>
+                <li><a href="../index.html#workflow">Workflow</a></li>
+                <li><a href="../index.html#ressources">Ressources</a></li>
+                <li><a href="../commandes.html">Commandes</a></li>
+                <li><a class="active" href="index.html">Ping Pong</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="game-wrapper">
+        <header class="game-header">
+            <h1>Ping Pong</h1>
+            <p>Contrôlez la raquette gauche avec les touches <strong>Z</strong> et <strong>S</strong>. La raquette droite est gérée automatiquement.</p>
+        </header>
+        <section class="game-area">
+            <canvas id="pong" width="780" height="480" aria-label="Table de ping pong"></canvas>
+            <div class="quiz-overlay" id="quizOverlay" aria-hidden="true">
+                <div class="quiz-card" role="dialog" aria-modal="true" aria-labelledby="quizHeading">
+                    <h2 id="quizHeading">Question Git</h2>
+                    <p id="quizQuestion" class="quiz-question"></p>
+                    <div id="quizOptions" class="quiz-options" role="group" aria-label="Choix de réponses"></div>
+                    <p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p>
+                    <button id="quizContinue" class="quiz-continue" type="button" hidden>Continuer la partie</button>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="startButton" type="button">Lancer / Reprendre</button>
+                <button id="resetButton" type="button">Réinitialiser</button>
+                <a class="back-link" href="../index.html">Retour à l'accueil</a>
+            </div>
+        </section>
+        <footer class="game-footer">
+            <p>Marquez 5 points pour gagner. Bonne partie !</p>
+        </footer>
+    </main>
+    <script src="game.js"></script>
+</body>
+</html>
